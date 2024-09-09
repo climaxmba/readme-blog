@@ -1,0 +1,28 @@
+.container {
+  display: block;
+  background-color: var(--bgcolor);
+  color: var(--fgcolor);
+  border-radius: 8px;
+  overflow-x: hidden;
+  box-shadow: 0 1px 2px 3px #80808010;
+
+  .image {
+    height: 150px;
+    background: magenta;
+  }
+
+  p {
+    padding: 4px 0.5rem;
+    font-size: large;
+    font-weight: 500;
+    text-align: left;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+  }
+
+  .likesNDate {
+    display: flex;
+    align-items: center;
+  }
+}
