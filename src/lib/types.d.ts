@@ -1,7 +1,6 @@
 interface Comment {
   author: string;
   message: string;
-  rating: number;
 }
 
 interface Blog {
@@ -10,6 +9,7 @@ interface Blog {
   content: string;
   title: string;
   date: string;
+  author: string;
   comments: Comment[];
 }
 
