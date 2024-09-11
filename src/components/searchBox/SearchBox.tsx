@@ -32,13 +32,13 @@ export default function SearchBox({
       <Select
         label="Categories"
         variant="filled"
-        defaultValue={category}
+        value={category}
         onChange={(e) => setCategrory(e.target.value)}
         sx={{
           minWidth: 100,
         }}
       >
-        <MenuItem value="0" defaultChecked>
+        <MenuItem value="">
           <i>All Categories</i>
         </MenuItem>
         {categories.map((val) => (

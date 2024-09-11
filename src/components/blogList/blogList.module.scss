@@ -1,0 +1,13 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: max-content;
+    margin: 2rem 0;
+  }
+}

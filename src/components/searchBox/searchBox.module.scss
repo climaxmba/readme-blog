@@ -1,7 +1,9 @@
 .container {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+  justify-content: center;
   background-color: white;
   color: #202020;
   padding: 6px;
