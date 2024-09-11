@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background-color: white;
+  color: #202020;
+  padding: 6px;
+  border-radius: 8px;
+  width: clamp(280px, 80vw, 800px);
+
+  & > *:first-child {
+    flex: 1 0 270px;
+  }
+}
