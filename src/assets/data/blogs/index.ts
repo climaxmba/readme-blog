@@ -12,6 +12,7 @@ const blogs = [
     author: "Andreas Rodriguez",
     image: "",
     content: blog0,
+    categories: ["JavaScript"],
     comment: [
       {
         author: "Sophia",
@@ -26,6 +27,7 @@ const blogs = [
     author: "Paula Arismendi",
     image: "",
     content: blog1,
+    categories: ["JavaScript", "React"],
     comment: [
       {
         author: "Kyle",
@@ -40,6 +42,7 @@ const blogs = [
     author: "Paula Arismendi",
     image: "",
     content: blog2,
+    categories: ["CSS"],
     comment: [
       {
         author: "Sophia",
@@ -54,6 +57,7 @@ const blogs = [
     author: "Andreas Rodriguez",
     image: "",
     content: blog3,
+    categories: ["CSS"],
     comment: [
       {
         author: "Kyle",
@@ -68,6 +72,7 @@ const blogs = [
     author: "Solomon Stanford",
     image: "",
     content: blog4,
+    categories: ["JavaScript", "WebAssembly"],
     comment: [
       {
         author: "Donald",
