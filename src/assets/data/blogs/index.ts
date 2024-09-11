@@ -13,7 +13,7 @@ const blogs = [
     image: "",
     content: blog0,
     categories: ["JavaScript"],
-    comment: [
+    comments: [
       {
         author: "Sophia",
         message: "Insightful",
@@ -28,7 +28,7 @@ const blogs = [
     image: "",
     content: blog1,
     categories: ["JavaScript", "React"],
-    comment: [
+    comments: [
       {
         author: "Kyle",
         message: "Cool!",
@@ -43,7 +43,7 @@ const blogs = [
     image: "",
     content: blog2,
     categories: ["CSS"],
-    comment: [
+    comments: [
       {
         author: "Sophia",
         message: "Insightful",
@@ -58,7 +58,7 @@ const blogs = [
     image: "",
     content: blog3,
     categories: ["CSS"],
-    comment: [
+    comments: [
       {
         author: "Kyle",
         message: "Insightful",
@@ -73,7 +73,7 @@ const blogs = [
     image: "",
     content: blog4,
     categories: ["JavaScript", "WebAssembly"],
-    comment: [
+    comments: [
       {
         author: "Donald",
         message: "Awesome 😀",

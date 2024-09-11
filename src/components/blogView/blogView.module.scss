@@ -1,0 +1,33 @@
+$container-w: clamp(300px, 100vw, 1024px);
+
+.blogView {
+  padding: 1rem 1.5rem;
+  width: $container-w;
+}
+
+.comments {
+  display: grid;
+  width: $container-w;
+  padding: 1rem;
+
+  h1 {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .comment {
+    padding: 8px;
+    background-color: #ffffff40;
+    border-radius: 12px;
+
+    h2,
+    p {
+      margin: 0;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+  }
+}
