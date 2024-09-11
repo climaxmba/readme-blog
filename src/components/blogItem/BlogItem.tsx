@@ -8,8 +8,12 @@ import styles from "./blogItem.module.scss";
 
 export default function BlogItem({ id, title, image, date }: BlogItemProps) {
   return (
-    <Link href={`${routes.blogs}/${id}`} className={styles.container}>
-      <div className={styles.image}>Img</div>
+    <Link
+      style={{ backgroundImage: image }}
+      href={`${routes.blogs}/${id}`}
+      className={styles.container}
+    >
+      <div className={styles.shift}></div>
       <div>
         <p>{title}</p>
         <div className={styles.likesNDate}>
