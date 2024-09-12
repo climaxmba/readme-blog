@@ -1,8 +1,18 @@
-.main {
+.container {
   display: flex;
+  gap: 2rem;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 2rem 1rem;
+  padding-top: var(--navbar-offset);
   min-height: 100vh;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
 }

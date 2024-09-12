@@ -1,4 +1,4 @@
-import blogs from "@/assets/data/blogs";
+import blogs from "@/assets/data/blogs/blogsData";
 import { NextResponse } from "next/server";
 
 export async function GET() {
