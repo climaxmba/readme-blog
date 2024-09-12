@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { Dispatch, SetStateAction, useState } from "react";
 import {
   AddOutlined,
   Close,
@@ -16,6 +18,8 @@ import { routes } from "@/lib/constants";
 import styles from "./navBar.module.scss";
 
 export default function NavBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className={styles.container}>
       <Logo />
@@ -58,19 +62,29 @@ export default function NavBar() {
         </li>
       </ul>
 
-      <IconButton title="Open Menu" className={styles.menuButton}>
+      <IconButton
+        onClick={() => setMenuOpen(true)}
+        title="Open Menu"
+        className={styles.menuButton}
+      >
         <MenuOutlined />
       </IconButton>
 
-      <MobileMenu />
+      <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </nav>
   );
 }
 
-function MobileMenu() {
+function MobileMenu({
+  menuOpen,
+  setMenuOpen,
+}: {
+  menuOpen: boolean;
+  setMenuOpen: Dispatch<SetStateAction<boolean>>;
+}) {
   return (
-    <div className={styles.mobileMenu}>
-      <IconButton title="Close Menu">
+    <div className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}>
+      <IconButton title="Close Menu" onClick={() => setMenuOpen(false)}>
         <Close />
       </IconButton>
 
