@@ -20,3 +20,16 @@ interface BlogItemProps {
   title: string;
   date: string;
 }
+
+interface Author {
+  id: string;
+  image: string;
+  name: string;
+  bio: string;
+  blogs: {
+      id: string;
+      title: string;
+      date: string;
+      image: string;
+  }[];
+}

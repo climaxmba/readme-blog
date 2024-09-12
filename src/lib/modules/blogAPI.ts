@@ -29,7 +29,27 @@ const blogAPI = (() => {
     throw new Error(response.statusText);
   }
 
-  return { getBlogs, getBlogById, getCategories };
+  async function getAuthors(): Promise<Author[]> {
+    const response = await fetch("/api/authors");
+    if (response.ok) {
+      const authors = await response.json();
+      return authors;
+    }
+
+    throw new Error(response.statusText);
+  }
+
+  async function getAuthorById(id: string): Promise<Author> {
+    const response = await fetch(`/api/authors/${id}`);
+    if (response.ok) {
+      const author = await response.json();
+      return author;
+    }
+
+    throw new Error(response.statusText);
+  }
+
+  return { getBlogs, getBlogById, getCategories, getAuthors, getAuthorById };
 })();
 
 export default blogAPI;

@@ -3,7 +3,10 @@ const authors = [
     id: "0",
     image: "",
     name: "Andreas Rodriguez",
-    bio: "",
+    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolore
+      dolores voluptas at cum ullam? Temporibus voluptate omnis eveniet quae
+      ipsa velit. Accusantium enim tenetur quaerat? Veniam quam repellendus
+      ducimus.`,
     blogs: [
       {
         id: "0",
@@ -23,7 +26,10 @@ const authors = [
     id: "1",
     image: "",
     name: "Paula Arismendi",
-    bio: "",
+    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolore
+      dolores voluptas at cum ullam? Temporibus voluptate omnis eveniet quae
+      ipsa velit. Accusantium enim tenetur quaerat? Veniam quam repellendus
+      ducimus.`,
     blogs: [
       {
         id: "1",
@@ -43,7 +49,10 @@ const authors = [
     id: "2",
     image: "",
     name: "Solomon Stanford",
-    bio: "",
+    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolore
+      dolores voluptas at cum ullam? Temporibus voluptate omnis eveniet quae
+      ipsa velit. Accusantium enim tenetur quaerat? Veniam quam repellendus
+      ducimus.`,
     blogs: [
       {
         id: "4",

@@ -7,6 +7,7 @@
 body {
   --bgcolor: whitesmoke;
   --fgcolor: #202020;
+  --gradient-bg: linear-gradient(20deg, blueviolet, black);
   --navbar-offset: 80px;
 
   color: var(--fgcolor);

@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-bottom: var(--navbar-offset);
+
+  & > * {
+    padding: 0 1rem;
+  }
+}
