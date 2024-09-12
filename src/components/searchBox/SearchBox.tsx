@@ -7,8 +7,8 @@ import styles from "./searchBox.module.scss";
 interface SearchAndFilterProps {
   query: string;
   setQuery: React.Dispatch<SetStateAction<string>>;
-  category: string;
-  setCategrory: React.Dispatch<SetStateAction<string>>;
+  category: string | null;
+  setCategory: React.Dispatch<SetStateAction<string>>;
   categories: string[];
 }
 
@@ -16,7 +16,7 @@ export default function SearchBox({
   query,
   setQuery,
   category,
-  setCategrory,
+  setCategory,
   categories,
 }: SearchAndFilterProps) {
   return (
@@ -33,7 +33,7 @@ export default function SearchBox({
         label="Categories"
         variant="filled"
         value={category}
-        onChange={(e) => setCategrory(e.target.value)}
+        onChange={(e) => setCategory(e.target.value as string)}
         sx={{
           minWidth: 100,
         }}
