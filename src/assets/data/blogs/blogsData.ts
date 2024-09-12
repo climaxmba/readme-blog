@@ -10,7 +10,7 @@ const blogs = [
     title: "WebSockets: Real-Time Communication in Web Applications",
     date: "10th Sep., 2024",
     author: "Andreas Rodriguez",
-    image: "",
+    image: "https://images.pexels.com/photos/17489156/pexels-photo-17489156/free-photo-of-computer-server-in-data-center-room.jpeg?auto=compress&cs=tinysrgb&w=640&dpr=1",
     content: blog0,
     categories: ["JavaScript"],
     comments: [
@@ -25,7 +25,7 @@ const blogs = [
     title: "JSX vs JS: A Deep Dive",
     date: "10th Sep., 2024",
     author: "Paula Arismendi",
-    image: "",
+    image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=640&dpr=1",
     content: blog1,
     categories: ["JavaScript", "React"],
     comments: [
@@ -40,7 +40,7 @@ const blogs = [
     title: "CSS Animations: Bringing Your Web Pages to Life",
     date: "10th Sep., 2024",
     author: "Paula Arismendi",
-    image: "",
+    image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=640&dpr=1",
     content: blog2,
     categories: ["CSS"],
     comments: [
@@ -55,7 +55,7 @@ const blogs = [
     title: "CSS Preprocessors: Enhancing Your Styling Workflow",
     date: "10th Sep., 2024",
     author: "Andreas Rodriguez",
-    image: "",
+    image: "https://images.pexels.com/photos/248515/pexels-photo-248515.png?auto=compress&cs=tinysrgb&w=640&dpr=1",
     content: blog3,
     categories: ["CSS"],
     comments: [
@@ -70,7 +70,7 @@ const blogs = [
     title: "WebAssembly in JavaScript: A Powerful Tool for Performance",
     date: "10th Sep., 2024",
     author: "Solomon Stanford",
-    image: "",
+    image: "https://images.pexels.com/photos/3665443/pexels-photo-3665443.jpeg?auto=compress&cs=tinysrgb&w=600",
     content: blog4,
     categories: ["JavaScript", "WebAssembly"],
     comments: [

@@ -3,7 +3,8 @@
   border-radius: 8px;
   overflow-x: hidden;
   box-shadow: 0 1px 2px 3px #80808010;
-  background: linear-gradient(20deg, magenta, blueviolet);
+  background: linear-gradient(20deg, magenta, blueviolet) no-repeat;
+  background-size: cover;
   color: whitesmoke;
 
   .shift {

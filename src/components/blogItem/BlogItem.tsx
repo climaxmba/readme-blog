@@ -9,7 +9,7 @@ import styles from "./blogItem.module.scss";
 export default function BlogItem({ id, title, image, date }: BlogItemProps) {
   return (
     <Link
-      style={{ backgroundImage: image }}
+      style={{ backgroundImage: `url(${image})` }}
       href={`${routes.blogs}/${id}`}
       className={styles.container}
     >
