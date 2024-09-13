@@ -1,23 +1,26 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Dispatch, SetStateAction, useState } from "react";
+import { type Dispatch, type SetStateAction, useState } from "react";
 import {
   AddOutlined,
   Close,
+  Contrast,
   HomeOutlined,
   LoginOutlined,
   MenuOutlined,
   PageviewOutlined,
   PersonOutline,
-  Search,
   StarOutline,
 } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import { routes } from "@/lib/constants";
+import { useNavContext } from "@/components/navBar/NavbarContext";
 import styles from "./navBar.module.scss";
 
+/** Requires Provider */
 export default function NavBar() {
+  const { handleThemeSwitch } = useNavContext();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -41,9 +44,14 @@ export default function NavBar() {
 
       <ul className={styles.iconLinks}>
         <li>
-          <Link href={routes.search}>
-            <Search /> Search
-          </Link>
+          <span
+            role="button"
+            tabIndex={0}
+            title="Switch Theme"
+            onClick={handleThemeSwitch}
+          >
+            <Contrast /> Theme
+          </span>
         </li>
         <li>
           <Link href={routes.wishlist}>
@@ -51,9 +59,9 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <IconButton>
+          <span role="button" title="Login">
             <LoginOutlined /> Login
-          </IconButton>
+          </span>
         </li>
         <li>
           <Link href={routes.writeBlog}>
@@ -118,7 +126,10 @@ function MobileMenu({
   );
 }
 
+/** Requires Provider */
 export function BottomNav() {
+  const { handleThemeSwitch } = useNavContext();
+
   return (
     <nav className={styles.bottomNav}>
       <Link href={routes.home}>
@@ -130,9 +141,14 @@ export function BottomNav() {
       <Link href={routes.wishlist}>
         <StarOutline /> Wishlist
       </Link>
-      <Link href={routes.search}>
-        <Search /> Search
-      </Link>
+      <span
+        role="button"
+        tabIndex={0}
+        title="Switch Theme"
+        onClick={handleThemeSwitch}
+      >
+        <Contrast /> Theme
+      </span>
     </nav>
   );
 }
