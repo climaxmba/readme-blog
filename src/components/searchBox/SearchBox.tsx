@@ -3,6 +3,7 @@ import { MenuItem, Select, TextField } from "@mui/material";
 import { SetStateAction } from "react";
 
 import styles from "./searchBox.module.scss";
+import MuiTheme from "../MuiTheme/MuiTheme";
 
 interface SearchAndFilterProps {
   query: string;
@@ -21,32 +22,34 @@ export default function SearchBox({
 }: SearchAndFilterProps) {
   return (
     <div className={styles.container}>
-      <TextField
-        variant="filled"
-        label="Search Blogs"
-        onChange={(e) => setQuery(e.target.value)}
-        value={query}
-        sx={{ ".MuiInputBase-root": { bgcolor: "transparent" } }}
-      />
+      <MuiTheme>
+        <TextField
+          variant="filled"
+          label="Search Blogs"
+          onChange={(e) => setQuery(e.target.value)}
+          value={query}
+          sx={{ ".MuiInputBase-root": { bgcolor: "transparent" } }}
+        />
 
-      <Select
-        label="Categories"
-        variant="filled"
-        value={category}
-        onChange={(e) => setCategory(e.target.value as string)}
-        sx={{
-          minWidth: 100,
-        }}
-      >
-        <MenuItem value="">
-          <i>All Categories</i>
-        </MenuItem>
-        {categories.map((val) => (
-          <MenuItem key={val} value={val}>
-            {val}
+        <Select
+          label="Categories"
+          variant="filled"
+          value={category}
+          onChange={(e) => setCategory(e.target.value as string)}
+          sx={{
+            minWidth: 100,
+          }}
+        >
+          <MenuItem value="">
+            <i>All Categories</i>
           </MenuItem>
-        ))}
-      </Select>
+          {categories.map((val) => (
+            <MenuItem key={val} value={val}>
+              {val}
+            </MenuItem>
+          ))}
+        </Select>
+      </MuiTheme>
     </div>
   );
 }

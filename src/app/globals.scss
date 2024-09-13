@@ -5,10 +5,24 @@
 }
 
 body {
+  --navbar-offset: 80px;
+
   --bgcolor: whitesmoke;
   --fgcolor: #202020;
-  --gradient-bg: linear-gradient(20deg, blueviolet, black);
-  --navbar-offset: 80px;
+  --accent-light: #bc93e1;
+  --accent-main: #8a2be2;
+  --accent-dark: #6a22ae;
+
+  --gradient-bg: linear-gradient(20deg, #8a2be2, black);
+
+  &[data-theme-dark] {
+    color-scheme: dark;
+    --bgcolor: #202020;
+    --fgcolor: whitesmoke;
+    --accent-light: #e5c9ff;
+    --accent-main: #c78cff;
+    --accent-dark: #8400ff;
+  }
 
   color: var(--fgcolor);
   background-color: var(--bgcolor);
@@ -30,12 +44,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--accent-main);
+  font-weight: bold;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
