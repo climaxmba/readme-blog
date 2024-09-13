@@ -156,7 +156,8 @@ export function BottomNav() {
 function Logo() {
   return (
     <Link href={routes.home}>
-      <Image alt="Logo" src="/next.svg" height={15.25} width={75} />
+      <Image alt="Logo" src="/logoLight.svg" height={50} width={125} className="logo-light" />
+      <Image alt="Logo" src="/logoDark.svg" height={50} width={125} className="logo-dark" />
     </Link>
   );
 }

@@ -20,6 +20,13 @@ body {
 
   --gradient-bg: linear-gradient(20deg, #8a2be2, black);
 
+  .logo-dark {
+    display: none;
+  }
+  .logo-light {
+    display: unset;
+  }
+
   &[data-theme-dark] {
     color-scheme: dark;
     --bgcolor: #202020;
@@ -27,6 +34,13 @@ body {
     --accent-light: #e5c9ff;
     --accent-main: #c78cff;
     --accent-dark: #8400ff;
+
+    .logo-dark {
+      display: unset;
+    }
+    .logo-light {
+      display: none;
+    }
   }
 
   color: var(--fgcolor);
