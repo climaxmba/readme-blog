@@ -10,6 +10,7 @@ interface Blog {
   title: string;
   date: string;
   author: string;
+  authorId: string;
   categories: string[];
   comments: Comment[];
 }

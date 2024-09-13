@@ -2,7 +2,7 @@ import img0 from "../../img/blogs/andreasRodriguez.webp";
 import img1 from "../../img/blogs/paulaArismendi.webp";
 import img2 from "../../img/blogs/solomonStanford.webp";
 
-const authors = [
+const authors: Author[] = [
   {
     id: "0",
     image: img0.src,

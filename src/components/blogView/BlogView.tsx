@@ -1,10 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Markdown from "markdown-to-jsx";
 import blogAPI from "@/lib/modules/blogAPI";
 import Loading, { LoadingError } from "../loading/Loading";
 import Code from "../code/Code";
+import { routes } from "@/lib/constants";
 
 import styles from "./blogView.module.scss";
 import "./blog-view.scss";
@@ -61,7 +63,13 @@ export default function Blog({ id }: { id: string }) {
           </main>
 
           <p>
-            Written by <i>{blog.author}</i>
+            Written by{" "}
+            <Link
+              style={{ fontStyle: "italic" }}
+              href={`${routes.authors}/${blog.authorId}`}
+            >
+              {blog.author}
+            </Link>
           </p>
 
           <section className={styles.comments}>
