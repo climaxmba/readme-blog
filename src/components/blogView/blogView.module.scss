@@ -17,6 +17,7 @@ $container-w: clamp(300px, 100vw, 1024px);
   display: grid;
   width: $container-w;
   padding: 1rem;
+  width: clamp(280px, 100%, 800px);
 
   h1 {
     margin: 1rem 0;
@@ -24,8 +25,8 @@ $container-w: clamp(300px, 100vw, 1024px);
   }
 
   .comment {
-    padding: 8px;
-    background-color: #ffffff40;
+    padding: 0.5rem;
+    background-color: #ffffff80;
     border-radius: 12px;
 
     h2,
