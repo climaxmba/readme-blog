@@ -1,15 +1,24 @@
-const path = require('path')
- 
+const path = require("path");
+
 module.exports = {
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
+    includePaths: [path.join(__dirname, "styles")],
   },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.md$/,
-      use: "raw-loader"
-    })
+      use: "raw-loader",
+    });
 
-    return config
-  }
-}
+    return config;
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+        pathname: "/**",
+      },
+    ],
+  },
+};

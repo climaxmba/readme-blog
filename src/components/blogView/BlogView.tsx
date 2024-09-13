@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Markdown from "markdown-to-jsx";
 import blogAPI from "@/lib/modules/blogAPI";
 import Loading, { LoadingError } from "../loading/Loading";
-import Markdown from "markdown-to-jsx";
 import Code from "../code/Code";
 
 import styles from "./blogView.module.scss";
@@ -43,7 +44,15 @@ export default function Blog({ id }: { id: string }) {
               options={{
                 overrides: {
                   code: Code,
+                  // The `code` override adds it's own `<pre>`
                   pre: ({ children }) => <>{children}</>,
+                  // Wrap `<table>`
+                  table: ({ children }) => (
+                    <div className="table-wrapper">
+                      <table>{children}</table>
+                    </div>
+                  ),
+                  img: ImageWrapper,
                 },
               }}
             >
@@ -72,5 +81,17 @@ export default function Blog({ id }: { id: string }) {
         <p>No Post found!</p>
       )}
     </>
+  );
+}
+
+function ImageWrapper({ src, alt }: { src: string; alt: string }) {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={320}
+      height={300}
+      className={styles.coverImage}
+    />
   );
 }

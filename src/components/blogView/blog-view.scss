@@ -8,6 +8,10 @@ h6 {
   line-height: 2.2rem;
 }
 
+li {
+  margin: 0.5rem 0;
+}
+
 ul,
 li {
   margin-left: 0.5rem;
@@ -18,5 +22,79 @@ main {
 
   p {
     margin: 1rem 0;
+  }
+}
+
+.table-wrapper {
+  margin: 1rem 0;
+  overflow-x: scroll;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: clamp(280px, 100%, 800px);
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px #1a1a1a20;
+
+  thead {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
+  th,
+  td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    font-weight: 500;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  tr:hover {
+    background-color: #f9f9f9;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 18px;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 18px;
+  }
+}
+
+// Dark theme
+body[data-theme-dark] {
+  table {
+    border-color: #333;
+
+    thead {
+      background-color: #333;
+      color: #fff;
+    }
+
+    th,
+    td {
+      border-bottom-color: #333;
+    }
+
+    tr:hover {
+      background-color: #444;
+    }
+  }
+}
+
+@media (width < 768px) {
+  table {
+    font-size: 14px;
   }
 }
