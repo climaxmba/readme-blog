@@ -16,6 +16,19 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  opacity: 0;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #80808080;
+}
+
 a {
   color: inherit;
   text-decoration: none;
