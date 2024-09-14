@@ -1,3 +1,4 @@
+import WishlistProvider from "@/lib/WishListContext";
 import BlogItem from "../blogItem/BlogItem";
 import styles from "./heroSection.module.scss";
 
@@ -13,12 +14,14 @@ export default function HeroSection() {
       <ul className={styles.recentBlogs}>
         {["", "", ""].map((_, key) => (
           <li key={key}>
-            <BlogItem
-              id={key.toString()}
-              image=""
-              title="Lorem Ipsum dolor sit."
-              date="12th Dec"
-            />
+            <WishlistProvider>
+              <BlogItem
+                id={key.toString()}
+                image=""
+                title="Lorem Ipsum dolor sit."
+                date="12th Dec"
+              />
+            </WishlistProvider>
           </li>
         ))}
       </ul>

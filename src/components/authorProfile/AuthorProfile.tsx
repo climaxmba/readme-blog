@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import blogAPI from "@/lib/modules/blogAPI";
 import Loading, { LoadingError } from "../loading/Loading";
+import BlogItem from "../blogItem/BlogItem";
+import WishlistProvider from "@/lib/WishListContext";
 
 import styles from "./authorProfile.module.scss";
-import Image from "next/image";
-import BlogItem from "../blogItem/BlogItem";
 
 export default function AuthorProfile({ id }: { id: string }) {
   const [loading, setLoading] = useState(true);
@@ -26,7 +27,7 @@ export default function AuthorProfile({ id }: { id: string }) {
   }, [id]);
 
   return (
-    <>
+    <WishlistProvider>
       {error ? (
         <LoadingError />
       ) : loading ? (
@@ -56,6 +57,6 @@ export default function AuthorProfile({ id }: { id: string }) {
       ) : (
         <p>No Post found!</p>
       )}
-    </>
+    </WishlistProvider>
   );
 }

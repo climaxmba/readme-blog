@@ -1,21 +1,24 @@
 "use client";
 import { useSearchParams, useRouter } from "next/navigation";
 import { type ChangeEvent, useEffect, useState } from "react";
-import Pagination from "@mui/material/Pagination";
+import { ToggleButton, Pagination } from "@mui/material";
+import MuiTheme from "../MuiTheme/MuiTheme";
 import Loading, { LoadingError } from "../loading/Loading";
 import SearchBox from "../searchBox/SearchBox";
 import BlogItem from "../blogItem/BlogItem";
 import useDebounce from "../../lib/useDebounce";
 import blogAPI from "@/lib/modules/blogAPI";
+import { routes } from "@/lib/constants";
 
 import styles from "./blogList.module.scss";
-import { routes } from "@/lib/constants";
+import { useWishlistContext } from "@/lib/WishListContext";
 
 export default function BlogList() {
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [error, setError] = useState(false);
+  const { wishlist } = useWishlistContext();
 
   const [filteredBlogs, setFilteredBlogs] = useState(blogs);
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,15 +26,20 @@ export default function BlogList() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [category, setCategory] = useState("");
+  const [inWishlist, setInWishlist] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
 
   const pageLimit = 6;
 
   useEffect(() => {
     const categoryQuery = searchParams.get("category");
+    const wishlistQuery = searchParams.get("wishlist");
+
     categoryQuery && setCategory(categoryQuery);
+    wishlistQuery && setInWishlist(true);
+
     router.replace(routes.blogs);
-  }, [router, searchParams]);
+  }, [router, searchParams, setCategory]);
 
   const handlePageChange = (_: ChangeEvent<unknown>, page: number) => {
     setCurrentPage(page - 1);
@@ -66,13 +74,16 @@ export default function BlogList() {
           .toLocaleLowerCase()
           .includes(debouncedSearchQuery.toLowerCase())
       )
-        if (blog.categories.includes(category as string) || category === "")
-          return true;
+        if (blog.categories.includes(category as string) || category === "") {
+          if (wishlist.includes(blog.id) && inWishlist) return true;
+          else if (!inWishlist) return true;
+        }
+
       return false;
     });
     setFilteredBlogs(filteredArray);
     if (blogs.length) setLoading(false);
-  }, [blogs, category, debouncedSearchQuery]);
+  }, [blogs, category, debouncedSearchQuery, inWishlist, wishlist]);
 
   return (
     <div className={styles.container}>
@@ -83,6 +94,29 @@ export default function BlogList() {
         setCategory={setCategory}
         categories={categories}
       />
+
+      <MuiTheme>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "0.5rem",
+          }}
+        >
+          <ToggleButton
+            onChange={() => setInWishlist((val) => !val)}
+            value={"wishlist"}
+            selected={inWishlist}
+            color="primary"
+            sx={{
+              p: 0.5,
+              ":not(.Mui-selected)": { color: "#808080 !important" },
+            }}
+          >
+            Wishlist
+          </ToggleButton>
+        </div>
+      </MuiTheme>
 
       {error ? (
         <LoadingError />

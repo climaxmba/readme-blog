@@ -1,5 +1,5 @@
 const storage = (() => {
-  function getWishlist(): Blog[] {
+  function getWishlist(): string[] {
     try {
       return JSON.parse(localStorage.getItem("wishlist") || "[]");
     } catch (error) {
@@ -8,7 +8,7 @@ const storage = (() => {
     return [];
   }
 
-  function setWishlist(blogs: Blog[] | []) {
+  function setWishlist(blogs: string[]) {
     localStorage.setItem("wishlist", JSON.stringify(blogs));
   }
 
