@@ -1,21 +1,20 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { type Dispatch, type SetStateAction, useState } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import {
-  AddOutlined,
   Close,
   Contrast,
   HomeOutlined,
-  LoginOutlined,
   MenuOutlined,
   PageviewOutlined,
-  PersonOutline,
   StarOutline,
 } from "@mui/icons-material";
+
 import IconButton from "@mui/material/IconButton";
 import { routes } from "@/lib/constants";
 import { useNavContext } from "@/components/navBar/NavbarContext";
+
 import styles from "./navBar.module.scss";
 
 /** Requires Provider */
@@ -57,7 +56,7 @@ export default function NavBar() {
             <StarOutline /> Wishlist
           </Link>
         </li>
-        <li>
+        {/* <li>
           <span role="button" title="Login">
             <LoginOutlined /> Login
           </span>
@@ -66,7 +65,7 @@ export default function NavBar() {
           <Link href={routes.writeBlog}>
             <AddOutlined /> Create New
           </Link>
-        </li>
+        </li> */}
       </ul>
 
       <IconButton
@@ -117,7 +116,7 @@ function MobileMenu({
         </li>
       </ul>
 
-      <ul className={styles.iconLinks}>
+      {/* <ul className={styles.iconLinks}>
         <li>
           <Link onClick={closeMenu} href={routes.writeBlog}>
             <AddOutlined /> Create New
@@ -128,7 +127,7 @@ function MobileMenu({
             <PersonOutline /> Me
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 }
