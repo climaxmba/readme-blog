@@ -72,7 +72,7 @@ export default function FeedbackForm({ blogTitle }: { blogTitle: string }) {
         {...{ "data-netlify": "true" }}
       >
         <input type="hidden" name="form-name" value="feedback" />
-        <input name="blogTitle" type="hidden" value={blogTitle} />
+        <input name="blog-title" type="hidden" value={blogTitle} />
         <label>
           Name:
           <input
