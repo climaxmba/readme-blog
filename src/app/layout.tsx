@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Ubuntu_Mono } from "next/font/google";
 import NavBar, { BottomNav } from "../components/navBar/NavBar";
 import NavbarProvider from "@/components/navBar/NavbarContext";
+import Footer from "@/components/footer/Footer";
 import "./globals.scss";
 
 const mono = Ubuntu_Mono({
@@ -36,6 +37,7 @@ export default function RootLayout({
         <NavbarProvider>
           <BottomNav />
         </NavbarProvider>
+        <Footer />
       </body>
     </html>
   );

@@ -163,7 +163,7 @@ export function BottomNav() {
   );
 }
 
-function Logo() {
+export function Logo() {
   return (
     <Link href={routes.home}>
       <Image

@@ -1,0 +1,40 @@
+.container {
+  padding: 2rem 1rem;
+  padding-bottom: var(--navbar-offset);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--footerbg);
+  color: var(--fgcolor);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+
+  & > img {
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+    opacity: 0.08;
+  }
+
+  .socialIcons {
+    svg {
+      fill: var(--fgcolor);
+    }
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 20%, 2rem);
+    text-wrap: nowrap;
+    display: flex;
+    gap: 6px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .author {
+    font-weight: 600;
+  }
+}
