@@ -11,11 +11,9 @@
   position: relative;
   text-align: center;
 
-  & > img {
-    position: absolute;
-    right: -50px;
-    bottom: -50px;
-    opacity: 0.08;
+  img {
+    height: auto !important;
+    width: 150px !important;
   }
 
   .socialIcons {
