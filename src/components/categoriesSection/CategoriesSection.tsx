@@ -31,7 +31,7 @@ export default function CategoriesSection() {
   }, []);
 
   return (
-    <section className={styles.container}>
+    <section id={routes.categories.slice(1)} className={styles.container}>
       <h1>Categories</h1>
 
       {loading ? (

@@ -1,6 +1,7 @@
 "use client";
 import { FormEventHandler, useEffect, useState } from "react";
-import { Button, TextareaAutosize, TextField } from "@mui/material";
+import Button from "@mui/material/Button";
+import { routes } from "@/lib/constants";
 import styles from "./contactSection.module.scss";
 
 export default function ContactSection() {
@@ -50,7 +51,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className={styles.container}>
+    <section id={routes.contact.slice(1)} className={styles.container}>
       <h1>Contact Us</h1>
 
       {error ? (

@@ -2,10 +2,10 @@ export const routes = {
   home: "/",
   blogs: "/blogs",
   wishlist: "/blogs?wishlist=true",
-  categories: "/categories",
+  categories: "/#categories",
   authors: "/authors",
   me: "/me",
-  contact: "/contact",
+  contact: "/#contact",
   search: "/search",
   writeBlog: "/write_blog",
 };
