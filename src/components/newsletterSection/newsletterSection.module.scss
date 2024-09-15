@@ -1,0 +1,43 @@
+.container {
+  min-height: 40vh;
+  padding: 2rem 1rem;
+  background-color: var(--bgcolor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    max-width: 800px;
+    margin: 1.8rem 1rem;
+  }
+  
+  .success {
+    position: fixed;
+    top: 80px;
+    z-index: 20;
+    padding: 1rem;
+    max-width: 280px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: var(--successbg);
+    
+  }
+
+  form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    max-width: 400px;
+  }
+}

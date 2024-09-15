@@ -21,6 +21,8 @@ body {
   --accent-light: #bc93e1;
   --accent-main: #8a2be2;
   --accent-dark: #6a22ae;
+  --errorbg: #f2d9d9;
+  --successbg: #d9f2df;
 
   --gradient-bg: linear-gradient(20deg, #8a2be2, black);
 
@@ -38,6 +40,8 @@ body {
     --accent-light: #e5c9ff;
     --accent-main: #c78cff;
     --accent-dark: #8400ff;
+    --errorbg: #4d3131;
+    --successbg: #3b5240;
 
     .logo-dark {
       display: unset;
@@ -52,6 +56,11 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   line-height: 1.75rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem 0;
+  line-height: 2.5rem;
 }
 
 ::-webkit-scrollbar {

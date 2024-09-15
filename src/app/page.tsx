@@ -1,7 +1,8 @@
-import FeaturedBlogsSection from "@/components/featuredBlogsSection/FeaturedBlogsSection";
-import HeroSection from "@/components/heroSection/HeroSection";
-import CategoriesSection from "@/components/categoriesSection/CategoriesSection";
 import MuiTheme from "@/components/MuiTheme/MuiTheme";
+import HeroSection from "@/components/heroSection/HeroSection";
+import NewsletterSection from "@/components/newsletterSection/NewsletterSection";
+import CategoriesSection from "@/components/categoriesSection/CategoriesSection";
+import ContactSection from "@/components/contactSection/ContactSection";
 import styles from "./page.module.scss";
 
 export default function Home() {
@@ -9,8 +10,9 @@ export default function Home() {
     <main className={styles.main}>
       <MuiTheme>
         <HeroSection />
-        <FeaturedBlogsSection />
+        <NewsletterSection />
         <CategoriesSection />
+        <ContactSection />
       </MuiTheme>
     </main>
   );

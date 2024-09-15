@@ -1,4 +1,11 @@
 .main {
   min-height: 100vh;
-  padding-top:  var(--navbar-offset);
+
+  & > *:first-child {
+    padding-top: var(--navbar-offset);
+  }
+
+  & > *:last-child {
+    padding-bottom: var(--navbar-offset);
+  }
 }
