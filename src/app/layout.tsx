@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Ubuntu_Mono } from "next/font/google";
 import NavBar, { BottomNav } from "../components/navBar/NavBar";
 import NavbarProvider from "@/components/navBar/NavbarContext";
 import "./globals.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const mono = Ubuntu_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  fallback: ["Courier New", "monospace"],
+});
 
 export const metadata: Metadata = {
-  title: "The Readme Blog",
-  description: "A comprehensive blogging platform where users can read, and interact with blog posts",
+  title: "Readme Blog",
+  description:
+    "A comprehensive blogging platform where users can read, and interact with blog posts",
 };
 
 export default function RootLayout({
@@ -18,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        style={{
+          fontFamily: mono.style.fontFamily,
+          fontStyle: mono.style.fontStyle,
+        }}
+      >
         <NavbarProvider>
           <NavBar />
         </NavbarProvider>
