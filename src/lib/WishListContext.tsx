@@ -33,7 +33,11 @@ export default function WishlistProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [wishlist, setWishlist] = useState(storage.getWishlist());
+  const [wishlist, setWishlist] = useState<string[]>([]);
+
+  useEffect(() => {
+    setWishlist(storage.getWishlist);
+  }, []);
 
   const addItem = (id: string) => {
     if (!wishlist.includes(id)) setWishlist([...wishlist, id]);
