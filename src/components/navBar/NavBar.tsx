@@ -20,8 +20,7 @@ import styles from "./navBar.module.scss";
 
 /** Requires Provider */
 export default function NavBar() {
-  const { handleThemeSwitch } = useNavContext();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { handleThemeSwitch, menuOpen, setMenuOpen } = useNavContext();
 
   return (
     <nav className={styles.container}>
@@ -90,6 +89,8 @@ function MobileMenu({
   menuOpen: boolean;
   setMenuOpen: Dispatch<SetStateAction<boolean>>;
 }) {
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <div className={`${styles.mobileMenu} ${menuOpen ? styles.open : ""}`}>
       <IconButton title="Close Menu" onClick={() => setMenuOpen(false)}>
@@ -100,24 +101,30 @@ function MobileMenu({
 
       <ul>
         <li>
-          <Link href={routes.categories}>Categories</Link>
+          <Link onClick={closeMenu} href={routes.categories}>
+            Categories
+          </Link>
         </li>
         <li>
-          <Link href={routes.authors}>Authors</Link>
+          <Link onClick={closeMenu} href={routes.authors}>
+            Authors
+          </Link>
         </li>
         <li>
-          <Link href={routes.contact}>Contact</Link>
+          <Link onClick={closeMenu} href={routes.contact}>
+            Contact
+          </Link>
         </li>
       </ul>
 
       <ul className={styles.iconLinks}>
         <li>
-          <Link href={routes.writeBlog}>
+          <Link onClick={closeMenu} href={routes.writeBlog}>
             <AddOutlined /> Create New
           </Link>
         </li>
         <li>
-          <Link href={routes.me}>
+          <Link onClick={closeMenu} href={routes.me}>
             <PersonOutline /> Me
           </Link>
         </li>
@@ -128,24 +135,28 @@ function MobileMenu({
 
 /** Requires Provider */
 export function BottomNav() {
-  const { handleThemeSwitch } = useNavContext();
+  const { handleThemeSwitch, setMenuOpen } = useNavContext();
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <nav className={styles.bottomNav}>
-      <Link href={routes.home}>
+      <Link onClick={closeMenu} href={routes.home}>
         <HomeOutlined /> Home
       </Link>
-      <Link href={routes.blogs}>
+      <Link onClick={closeMenu} href={routes.blogs}>
         <PageviewOutlined /> Blogs
       </Link>
-      <Link href={routes.wishlist}>
+      <Link onClick={closeMenu} href={routes.wishlist}>
         <StarOutline /> Wishlist
       </Link>
       <span
         role="button"
         tabIndex={0}
         title="Switch Theme"
-        onClick={handleThemeSwitch}
+        onClick={() => {
+          setMenuOpen(false);
+          handleThemeSwitch();
+        }}
       >
         <Contrast /> Theme
       </span>
@@ -156,8 +167,20 @@ export function BottomNav() {
 function Logo() {
   return (
     <Link href={routes.home}>
-      <Image alt="Logo" src="/logoLight.svg" height={50} width={125} className="logo-light" />
-      <Image alt="Logo" src="/logoDark.svg" height={50} width={125} className="logo-dark" />
+      <Image
+        alt="Logo"
+        src="/logoLight.svg"
+        height={50}
+        width={125}
+        className="logo-light"
+      />
+      <Image
+        alt="Logo"
+        src="/logoDark.svg"
+        height={50}
+        width={125}
+        className="logo-dark"
+      />
     </Link>
   );
 }

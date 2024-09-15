@@ -13,6 +13,8 @@ import storage from "../../lib/modules/storage";
 interface Theme {
   isDarkMode: boolean;
   setIsDarkMode: Dispatch<SetStateAction<boolean>>;
+  menuOpen: boolean;
+  setMenuOpen: Dispatch<SetStateAction<boolean>>;
   handleThemeSwitch: () => void;
 }
 
@@ -33,6 +35,7 @@ export default function NavbarProvider({
   children: React.ReactNode;
 }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const darkThemeEnabled = storage.isDarkThemeEnabled();
@@ -51,7 +54,13 @@ export default function NavbarProvider({
 
   return (
     <NavbarContext.Provider
-      value={{ isDarkMode, setIsDarkMode, handleThemeSwitch }}
+      value={{
+        isDarkMode,
+        setIsDarkMode,
+        handleThemeSwitch,
+        menuOpen,
+        setMenuOpen,
+      }}
     >
       {children}
     </NavbarContext.Provider>
