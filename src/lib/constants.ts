@@ -7,5 +7,7 @@ export const routes = {
   me: "/me",
   contact: "/contact",
   search: "/search",
-  writeBlog: "/write_blog"
+  writeBlog: "/write_blog",
 };
+
+export const allCategories = " ";

@@ -1,9 +1,10 @@
 "use client";
 import { MenuItem, Select, TextField } from "@mui/material";
 import { SetStateAction } from "react";
+import MuiTheme from "../MuiTheme/MuiTheme";
+import { allCategories } from "@/lib/constants";
 
 import styles from "./searchBox.module.scss";
-import MuiTheme from "../MuiTheme/MuiTheme";
 
 interface SearchAndFilterProps {
   query: string;
@@ -40,7 +41,7 @@ export default function SearchBox({
             minWidth: 100,
           }}
         >
-          <MenuItem value="">
+          <MenuItem value={allCategories}>
             <i>All Categories</i>
           </MenuItem>
           {categories.map((val) => (

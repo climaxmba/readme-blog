@@ -8,10 +8,10 @@ import SearchBox from "../searchBox/SearchBox";
 import BlogItem from "../blogItem/BlogItem";
 import useDebounce from "../../lib/useDebounce";
 import blogAPI from "@/lib/modules/blogAPI";
-import { routes } from "@/lib/constants";
+import { allCategories, routes } from "@/lib/constants";
+import { useWishlistContext } from "@/lib/WishListContext";
 
 import styles from "./blogList.module.scss";
-import { useWishlistContext } from "@/lib/WishListContext";
 
 export default function BlogList() {
   const [loading, setLoading] = useState(true);
@@ -25,7 +25,7 @@ export default function BlogList() {
   const debouncedSearchQuery = useDebounce(searchQuery, 1000);
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(allCategories);
   const [inWishlist, setInWishlist] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -74,7 +74,10 @@ export default function BlogList() {
           .toLocaleLowerCase()
           .includes(debouncedSearchQuery.toLowerCase())
       )
-        if (blog.categories.includes(category as string) || category === "") {
+        if (
+          blog.categories.includes(category as string) ||
+          category === allCategories
+        ) {
           if (wishlist.includes(blog.id) && inWishlist) return true;
           else if (!inWishlist) return true;
         }
@@ -99,7 +102,7 @@ export default function BlogList() {
         <div
           style={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             margin: "0.5rem",
           }}
         >
