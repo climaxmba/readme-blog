@@ -1,0 +1,63 @@
+.container {
+  margin: 3rem 0;
+  padding: 0 1rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .error,
+  .success {
+    position: fixed;
+    top: 80px;
+    z-index: 20;
+    padding: 1rem;
+    max-width: 280px;
+    border-radius: 8px;
+
+    &.error {
+      background-color: var(--errorbg);
+    }
+
+    &.success {
+      background-color: var(--successbg);
+    }
+  }
+
+  .form {
+    display: grid;
+    gap: 2rem;
+    width: clamp(260px, 100%, 500px);
+
+    & > label {
+      background-color: #80808020;
+      border-radius: 8px;
+      padding: 12px;
+      display: grid;
+      gap: 6px;
+      font-weight: 400;
+    }
+
+    input,
+    textarea {
+      font-family: inherit;
+      font-weight: 500;
+      font-size: large;
+      background-color: transparent;
+      color: inherit;
+      border: none;
+      outline: none;
+      padding: 8px;
+
+      &::placeholder {
+        font-style: italic;
+      }
+    }
+  }
+}

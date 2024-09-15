@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "markdown-to-jsx";
-import blogAPI from "@/lib/modules/blogAPI";
-import Loading, { LoadingError } from "../loading/Loading";
+
 import Code from "../code/Code";
+import Loading, { LoadingError } from "../loading/Loading";
+import FeedbackForm from "../feedbackForm/FeedbackForm";
+import blogAPI from "@/lib/modules/blogAPI";
 import { routes } from "@/lib/constants";
 
 import styles from "./blogView.module.scss";
@@ -74,7 +76,6 @@ export default function Blog({ id }: { id: string }) {
 
           <section className={styles.comments}>
             <h1>Comments</h1>
-
             <div>
               {blog.comments.map((comment) => (
                 <div key={comment.author} className={styles.comment}>
@@ -84,6 +85,8 @@ export default function Blog({ id }: { id: string }) {
               ))}
             </div>
           </section>
+
+          <FeedbackForm blogTitle={blog.title} />
         </>
       ) : (
         <p>No Post found!</p>
