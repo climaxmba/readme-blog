@@ -11,6 +11,11 @@
     height: 200px;
   }
 
+  & > *:last-child {
+    padding-top: 6px;
+    background: linear-gradient(0deg, black, #000000f0, transparent);
+  }
+
   p {
     padding: 4px 0.5rem;
     font-size: large;
