@@ -1,7 +1,6 @@
 .container {
   min-height: 40vh;
   padding: 2rem 1rem;
-  background-color: var(--bgcolor);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +34,7 @@
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 8px;
     background-color: whitesmoke;
     max-width: 400px;

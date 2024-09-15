@@ -1,5 +1,8 @@
 .main {
   min-height: 100vh;
+  color: var(--fgcolor);
+  background: var(--home-gradient-bg);
+  transition: color ease 0.8s;
 
   & > *:first-child {
     padding-top: var(--navbar-offset);
