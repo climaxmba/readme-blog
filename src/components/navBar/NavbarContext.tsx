@@ -32,7 +32,12 @@ export default function NavbarProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isDarkMode, setIsDarkMode] = useState(storage.isDarkThemeEnabled());
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const darkThemeEnabled = storage.isDarkThemeEnabled();
+    if (darkThemeEnabled) setIsDarkMode(true);
+  }, []);
 
   useEffect(() => {
     if (isDarkMode) document.body.setAttribute("data-theme-dark", "");
