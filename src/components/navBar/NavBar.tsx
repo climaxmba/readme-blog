@@ -175,15 +175,15 @@ export function Logo() {
       <Image
         alt="Logo"
         src="/logoLight.svg"
-        height={50}
-        width={125}
+        height={40}
+        width={100}
         className="logo-light"
       />
       <Image
         alt="Logo"
         src="/logoDark.svg"
-        height={50}
-        width={125}
+        height={40}
+        width={100}
         className="logo-dark"
       />
     </Link>
