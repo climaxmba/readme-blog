@@ -23,9 +23,10 @@ export default function BlogItem({ id, title, image, date }: BlogItemProps) {
         <p>{title}</p>
         <div className={styles.likesNDate}>
           <IconButton
-            onClick={() =>
-              wishlist.includes(id) ? removeItem(id) : addItem(id)
-            }
+            onClick={(e) => {
+              wishlist.includes(id) ? removeItem(id) : addItem(id);
+              e.preventDefault();
+            }}
           >
             {wishlist.includes(id) ? (
               <Star htmlColor="gold" />
