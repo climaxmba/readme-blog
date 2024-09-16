@@ -40,15 +40,17 @@ export default function WishlistProvider({
   }, []);
 
   const addItem = (id: string) => {
-    if (!wishlist.includes(id)) setWishlist([...wishlist, id]);
+    if (!wishlist.includes(id)) {
+      const newList = [...wishlist, id];
+      setWishlist(newList);
+      storage.setWishlist(newList);
+    }
   };
   const removeItem = (id: string) => {
-    setWishlist(wishlist.filter((itemId) => itemId !== id));
+    const newList = wishlist.filter((itemId) => itemId !== id);
+    setWishlist(newList);
+    storage.setWishlist(newList);
   };
-
-  useEffect(() => {
-    storage.setWishlist(wishlist);
-  }, [wishlist]);
 
   return (
     <WishlistContext.Provider
