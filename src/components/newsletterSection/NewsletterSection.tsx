@@ -36,7 +36,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className={styles.container}>
+    <section className={styles.container}>
       <h1>Sign up for our weekly Newsletter</h1>
 
       <p>

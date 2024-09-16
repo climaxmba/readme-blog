@@ -51,7 +51,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id={routes.contact.slice(1)} className={styles.container}>
+    <section id={routes.contact.slice(2)} className={styles.container}>
       <h1>Contact Us</h1>
 
       {error ? (
