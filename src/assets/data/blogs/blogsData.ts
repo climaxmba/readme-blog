@@ -14,12 +14,6 @@ const blogs = [
     image: "https://images.pexels.com/photos/17489156/pexels-photo-17489156/free-photo-of-computer-server-in-data-center-room.jpeg?auto=compress&cs=tinysrgb&w=640&dpr=1",
     content: blog0,
     categories: ["JavaScript"],
-    comments: [
-      {
-        author: "Sophia",
-        message: "Insightful",
-      },
-    ],
   },
   {
     id: "1",
@@ -30,12 +24,6 @@ const blogs = [
     image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=640&dpr=1",
     content: blog1,
     categories: ["JavaScript", "React"],
-    comments: [
-      {
-        author: "Kyle",
-        message: "Cool!",
-      },
-    ],
   },
   {
     id: "2",
@@ -46,12 +34,6 @@ const blogs = [
     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=640&dpr=1",
     content: blog2,
     categories: ["CSS"],
-    comments: [
-      {
-        author: "Sophia",
-        message: "Insightful",
-      },
-    ],
   },
   {
     id: "3",
@@ -62,12 +44,6 @@ const blogs = [
     image: "https://images.pexels.com/photos/248515/pexels-photo-248515.png?auto=compress&cs=tinysrgb&w=640&dpr=1",
     content: blog3,
     categories: ["CSS"],
-    comments: [
-      {
-        author: "Kyle",
-        message: "Insightful",
-      },
-    ],
   },
   {
     id: "4",
@@ -78,12 +54,6 @@ const blogs = [
     image: "https://images.pexels.com/photos/3665443/pexels-photo-3665443.jpeg?auto=compress&cs=tinysrgb&w=600",
     content: blog4,
     categories: ["JavaScript", "WebAssembly"],
-    comments: [
-      {
-        author: "Donald",
-        message: "Awesome 😀",
-      },
-    ],
   },
 ];
 

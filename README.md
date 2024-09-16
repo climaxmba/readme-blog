@@ -23,7 +23,7 @@ npm install && npm run dev
 To read a blog, click the **Blogs** link on the navbar and click on the blog you want to read. You will see a feedback form at the bottom of the page, you are welcomed to leave your taughts by filling this form.
 
 ### Working with wishlist
-Each blog item has a star icon, it allows you to add and remove the blog from wishlist.
+Each blog item has a star icon, it allows you to add and remove the blog from wishlist. You can also find a button for this at the top of each blog page. To view blogs in your wishlist, click the Wishlist button with the *Star* icon. 
 
 ## 🙏 Acknowledgement
 

@@ -3,12 +3,16 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "markdown-to-jsx";
+import Button from "@mui/material/Button";
 
 import Code from "../code/Code";
 import Loading, { LoadingError } from "../loading/Loading";
 import FeedbackForm from "../feedbackForm/FeedbackForm";
 import blogAPI from "@/lib/modules/blogAPI";
 import { routes } from "@/lib/constants";
+import WishlistProvider, { useWishlistContext } from "@/lib/WishListContext";
+import { Star, StarOutline } from "@mui/icons-material";
+import MuiTheme from "../MuiTheme/MuiTheme";
 
 import styles from "./blogView.module.scss";
 import "./blog-view.scss";
@@ -43,6 +47,10 @@ export default function Blog({ id }: { id: string }) {
             Published on <i>{blog.date}</i>
           </p>
 
+          <WishlistProvider>
+            <WishlistButton id={blog.id} />
+          </WishlistProvider>
+
           <main className={styles.blogView}>
             <Markdown
               options={{
@@ -74,18 +82,6 @@ export default function Blog({ id }: { id: string }) {
             </Link>
           </p>
 
-          <section className={styles.comments}>
-            <h1>Comments</h1>
-            <div>
-              {blog.comments.map((comment) => (
-                <div key={comment.author} className={styles.comment}>
-                  <h2>{comment.author}</h2>
-                  <p>{comment.message}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
           <FeedbackForm blogTitle={blog.title} />
         </>
       ) : (
@@ -104,5 +100,23 @@ function ImageWrapper({ src, alt }: { src: string; alt: string }) {
       height={300}
       className={styles.coverImage}
     />
+  );
+}
+
+function WishlistButton({ id }: { id: string }) {
+  const { wishlist, addItem, removeItem } = useWishlistContext();
+  const isInWishlist = wishlist.includes(id);
+  
+  return (
+    <MuiTheme>
+      <Button
+        onClick={() => (isInWishlist ? removeItem(id) : addItem(id))}
+        startIcon={isInWishlist ? <Star /> : <StarOutline />}
+        variant={isInWishlist ? "text" : "contained"}
+        sx={{ m: "1rem 0" }}
+      >
+        {isInWishlist ? "Remove" : "Add to Wishlist"}
+      </Button>
+    </MuiTheme>
   );
 }

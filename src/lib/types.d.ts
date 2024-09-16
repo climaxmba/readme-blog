@@ -1,8 +1,3 @@
-interface Comment {
-  author: string;
-  message: string;
-}
-
 interface Blog {
   id: string;
   image: string;
@@ -12,7 +7,6 @@ interface Blog {
   author: string;
   authorId: string;
   categories: string[];
-  comments: Comment[];
 }
 
 interface BlogItemProps {
@@ -28,9 +22,9 @@ interface Author {
   name: string;
   bio: string;
   blogs: {
-      id: string;
-      title: string;
-      date: string;
-      image: string;
+    id: string;
+    title: string;
+    date: string;
+    image: string;
   }[];
 }
