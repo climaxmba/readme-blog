@@ -8,6 +8,7 @@ import {
   HomeOutlined,
   MenuOutlined,
   PageviewOutlined,
+  PersonOutline,
   StarOutline,
 } from "@mui/icons-material";
 
@@ -54,6 +55,11 @@ export default function NavBar() {
         <li>
           <Link href={routes.wishlist}>
             <StarOutline /> Wishlist
+          </Link>
+        </li>
+        <li>
+          <Link href={routes.authors}>
+            <PersonOutline /> Authors
           </Link>
         </li>
         {/* <li>
