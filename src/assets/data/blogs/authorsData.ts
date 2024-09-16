@@ -22,7 +22,15 @@ const authors: Author[] = [
         id: "3",
         title: "CSS Preprocessors: Enhancing Your Styling Workflow",
         date: "10th Sep., 2024",
-        image: "",
+        image:
+          "https://images.pexels.com/photos/248515/pexels-photo-248515.png?auto=compress&cs=tinysrgb&w=640&dpr=1",
+      },
+      {
+        id: "6",
+        title: "Three.js: A Powerful JavaScript 3D Library",
+        date: "16th Sep., 2024",
+        image:
+          "https://images.pexels.com/photos/17483873/pexels-photo-17483873/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-proje.png?auto=compress&cs=tinysrgb&w=600&dpr=1",
       },
     ],
   },
@@ -48,6 +56,20 @@ const authors: Author[] = [
         image:
           "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=640&dpr=1",
       },
+      {
+        id: "7",
+        title: "Unit Testing: A Cornerstone of Quality Software",
+        date: "16th Sep., 2024",
+        image:
+          "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1",
+      },
+      {
+        id: "9",
+        title: "Tackling Complex Projects: A Strategic Approach",
+        date: "16th Sep., 2024",
+        image:
+          "https://images.pexels.com/photos/6749966/pexels-photo-6749966.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1",
+      },
     ],
   },
   {
@@ -64,6 +86,20 @@ const authors: Author[] = [
         date: "10th Sep., 2024",
         image:
           "https://images.pexels.com/photos/3665443/pexels-photo-3665443.jpeg?auto=compress&cs=tinysrgb&w=600",
+      },
+      {
+        id: "5",
+        title: "PostgreSQL vs MongoDB: A Comparative Analysis",
+        date: "16th Sep., 2024",
+        image:
+          "https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1",
+      },
+      {
+        id: "8",
+        title: "Creating REST APIs with Spring Boot: A Comprehensive Guide",
+        date: "16th Sep., 2024",
+        image:
+          "https://images.pexels.com/photos/11035364/pexels-photo-11035364.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1",
       },
     ],
   },
