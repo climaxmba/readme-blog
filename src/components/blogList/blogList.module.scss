@@ -10,4 +10,8 @@
     grid-auto-rows: max-content;
     margin: 2rem 0;
   }
+
+  .pagination * {
+    color: var(--fgcolor) !important;
+  }
 }

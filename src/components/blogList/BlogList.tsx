@@ -145,17 +145,26 @@ export default function BlogList() {
                 />
               ))}
           </div>
-          <Pagination
-            count={
-              filteredBlogs.length > pageLimit
-                ? Math.ceil(filteredBlogs.length / pageLimit)
-                : 1
-            }
-            page={currentPage + 1}
-            shape="rounded"
-            onChange={handlePageChange}
-            sx={{ alignSelf: "center" }}
-          />
+          <MuiTheme>
+            <Pagination
+              count={
+                filteredBlogs.length > pageLimit
+                  ? Math.ceil(filteredBlogs.length / pageLimit)
+                  : 1
+              }
+              page={currentPage + 1}
+              shape="rounded"
+              onChange={handlePageChange}
+              className={styles.pagination}
+              sx={{
+                alignSelf: "center",
+                ".Mui-selected": {
+                  fontWeight: "600",
+                  bgcolor: "#8a2be250"
+                },
+              }}
+            />
+          </MuiTheme>
         </>
       ) : (
         <p>No Post found!</p>
