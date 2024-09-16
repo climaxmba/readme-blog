@@ -1,11 +1,17 @@
 "use client";
-import { FormEventHandler, useEffect, useState } from "react";
+import { FormEventHandler, useEffect, useRef, useState } from "react";
 import { Button, TextField } from "@mui/material";
+import { useInView, motion } from "framer-motion";
 import styles from "./newsletterSection.module.scss";
 
 export default function ContactSection() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
+
+  const ref = useRef(null);
+  const visible = useInView(ref, {
+    margin: "0px 100px -50px 0px",
+  });
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -42,7 +48,15 @@ export default function ContactSection() {
 
       {success ? <div className={styles.success}>{success}</div> : <></>}
 
-      <form action="/" onSubmit={handleSubmit} className={styles.form}>
+      <motion.form
+        ref={ref}
+        initial={{ scale: 0.5 }}
+        animate={visible ? { scale: 1 } : undefined}
+        transition={{ type: "tween", duration: 0.35 }}
+        action="/"
+        onSubmit={handleSubmit}
+        className={styles.form}
+      >
         <TextField label="Email" type="email" required />
 
         {submitting ? (
@@ -54,7 +68,7 @@ export default function ContactSection() {
             Sign Up
           </Button>
         )}
-      </form>
+      </motion.form>
     </section>
   );
 }

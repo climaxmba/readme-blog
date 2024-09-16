@@ -55,9 +55,12 @@
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+  transform: translateX(110vw);
+  transition: transform ease-in-out 0.3s;
 
   &.open {
     display: flex;
+    transform: translateX(0);
   }
 
   ul {
@@ -95,6 +98,10 @@
 @media screen and (width < 760px) {
   .container {
     justify-content: space-between;
+
+    .mobileMenu {
+      display: flex;
+    }
 
     ul:not(.mobileMenu ul) {
       display: none;

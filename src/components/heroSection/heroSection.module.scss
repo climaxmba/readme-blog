@@ -35,3 +35,9 @@
     }
   }
 }
+
+@media screen and (width > 470px) {
+  .container h1 {
+    line-height: 4rem !important;
+  }
+}
