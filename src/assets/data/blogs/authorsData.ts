@@ -7,10 +7,9 @@ const authors: Author[] = [
     id: "0",
     image: img0.src,
     name: "Andreas Rodriguez",
-    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolore
-      dolores voluptas at cum ullam? Temporibus voluptate omnis eveniet quae
-      ipsa velit. Accusantium enim tenetur quaerat? Veniam quam repellendus
-      ducimus.`,
+    bio: `I am a dedicated frontend developer with 6 years of experience crafting engaging web applications.
+      My expertise lies in React, Angular and Vue.
+      I am passionate about staying up-to-date with the latest frontend trends and sharing my knowledge through this blog.`,
     blogs: [
       {
         id: "0",
@@ -31,10 +30,9 @@ const authors: Author[] = [
     id: "1",
     image: img1.src,
     name: "Paula Arismendi",
-    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolore
-      dolores voluptas at cum ullam? Temporibus voluptate omnis eveniet quae
-      ipsa velit. Accusantium enim tenetur quaerat? Veniam quam repellendus
-      ducimus.`,
+    bio: `Hey there! I'm a frontend developer who's been coding my way into the digital world for 4 years.
+      I'm all about building sleek, user-friendly interfaces that make people go "wow."
+      Whether it's with React, Angular, or a sprinkle of vanilla JavaScript, I love the challenge of turning ideas into reality.`,
     blogs: [
       {
         id: "1",
@@ -56,10 +54,9 @@ const authors: Author[] = [
     id: "2",
     image: img2.src,
     name: "Solomon Stanford",
-    bio: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolore
-      dolores voluptas at cum ullam? Temporibus voluptate omnis eveniet quae
-      ipsa velit. Accusantium enim tenetur quaerat? Veniam quam repellendus
-      ducimus.`,
+    bio: `Hey there! I'm a software engineer who loves diving deep into the world of code.
+      I've been building things with computers since I was a kid, and I'm still just as excited about it as ever.
+      I'm passionate about sharing my knowledge and helping others learn and grow in this field.`,
     blogs: [
       {
         id: "4",
